@@ -1,12 +1,12 @@
 import React from "react";
-import * as Components from './components.js';
+import * as Components from './components.js'; 
+import {useNavigate} from "react-router-dom"
 
 function LoginPage({ signIn, toggle, history }) {
+    const navigate = useNavigate()
     const handleSignIn = () => {
-        // Redirect to ChooseImage page
-        history.push("./ChooseImage");
+        navigate("/home")
     };
-    
 
     return (
         <Components.Container>
