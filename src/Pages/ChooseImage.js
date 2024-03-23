@@ -4,7 +4,6 @@ import Sidebar from '../components/Sidebar';
 
 export default function ChooseImage() {
   const [svgImage, setSvgImage] = useState(null);
-  const [message, setMessage] = useState('');
   const [scale, setScale] = useState(1);
   const [rotationAngle, setRotationAngle] = useState(0);
   const [history, setHistory] = useState([]);
@@ -16,39 +15,31 @@ export default function ChooseImage() {
     if (!file) return;
 
     if (file.type !== 'image/svg+xml') {
-      setMessage('Please choose an SVG image.');
-      setSvgImage(null);
+      // Handle invalid file type
       return;
     }
 
-    // Read the selected file as data URL and set it as src for the image
     const reader = new FileReader();
     reader.onload = () => {
       setSvgImage(reader.result);
-      setMessage('File uploaded successfully!');
     };
     reader.readAsDataURL(file);
 
-    // Hide the file input after uploading image
     document.getElementById('fileInput').style.display = 'none';
   };
 
   const handleRotateClick = () => {
-    // Increase rotation angle by 90 degrees on each click
     const newRotationAngle = rotationAngle + 90;
     setRotationAngle(newRotationAngle);
 
-    // Save current state to history
     const currentState = { svgImage, scale, rotationAngle: newRotationAngle };
     setHistory([...history, currentState]);
   };
 
   const handleScaleClick = () => {
-    // Increase scale factor by 0.1 on each click
     const newScale = scale + 0.1;
     setScale(newScale);
 
-    // Save current state to history
     const currentState = { svgImage, scale: newScale, rotationAngle };
     setHistory([...history, currentState]);
   };
@@ -59,8 +50,8 @@ export default function ChooseImage() {
       setSvgImage(previousState.svgImage);
       setScale(previousState.scale);
       setRotationAngle(previousState.rotationAngle);
-      setHistory(history.slice(0, -1)); // Remove the last item from history
-      setRedoHistory([...redoHistory, previousState]); // Add the reverted state to redo history
+      setHistory(history.slice(0, -1));
+      setRedoHistory([...redoHistory, previousState]);
     }
   };
 
@@ -70,40 +61,72 @@ export default function ChooseImage() {
       setSvgImage(nextState.svgImage);
       setScale(nextState.scale);
       setRotationAngle(nextState.rotationAngle);
-      setRedoHistory(redoHistory.slice(0, -1)); // Remove the last item from redo history
-      setHistory([...history, nextState]); // Add the reapplied state to history
+      setRedoHistory(redoHistory.slice(0, -1));
+      setHistory([...history, nextState]);
     }
   };
+
   const handleSaveImage = () => {
-    // Save current state of the image
     const currentState = { svgImage, scale, rotationAngle };
-    // You can then save currentState to your database or perform any other action needed
+    // Save currentState to database or perform any other action
     console.log('Image saved:', currentState);
   };
+
   const handleToggleInput = () => {
     const fileInput = document.getElementById('fileInput');
-    if (fileInput.style.display === 'none') {
-      fileInput.style.display = 'block';
-      setSvgImage(null); // Hide the displayed image
-    } else {
-      fileInput.style.display = 'none';
-    }
+    fileInput.style.display = fileInput.style.display === 'none' ? 'block' : 'none';
+    setSvgImage(null);
+  };
+
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("text/plain", "");
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const offsetX = e.clientX - e.target.getBoundingClientRect().left;
+    const offsetY = e.clientY - e.target.getBoundingClientRect().top;
+  
+    const img = document.createElement("img");
+    img.src = svgImage;
+    img.style.transform = `scale(${scale}) rotate(${rotationAngle}deg)`;
+    img.style.position = "absolute";
+    img.style.left = `${offsetX}px`;
+    img.style.top = `${offsetY}px`;
+    img.style.cursor = "grab";
+  
+    img.setAttribute("draggable", "true");
+    img.addEventListener("dragstart", handleDragStart);
+  
+    // Double click event listener for deleting the image
+    img.addEventListener("dblclick", handleDelete);
+  
+    e.target.appendChild(img);
+  };
+  
+  const handleDelete = (e) => {
+    e.target.parentNode.removeChild(e.target);
   };
   
 
   return (
     <div>
-<Navbar onUndo={handleUndo} onRedo={handleRedo} onSaveImage={handleSaveImage} svgImage={svgImage} onToggleInput={handleToggleInput} />
-
+      <Navbar onUndo={handleUndo} onRedo={handleRedo} onSaveImage={handleSaveImage} svgImage={svgImage} onToggleInput={handleToggleInput} />
       <div style={{ display: "flex" }}>
         <div>
           <Sidebar onRotate={handleRotateClick} onScale={handleScaleClick} />
         </div>
-        <div className='preview-wrap'>
-          <input type="file" id="fileInput" accept=".svg" onChange={handleFileSelect} />
-
+        <div className='preview-wrap' onDragOver={handleDragOver} onDrop={handleDrop}>
+          <div className="file-input-container">
+            <input type="file" id="fileInput" accept=".svg" onChange={handleFileSelect} />
+            <label htmlFor="fileInput" className="file-input-label">+</label>
+          </div>
           <div>
-            {svgImage && <img src={svgImage} alt="Uploaded SVG" style={{ transform: `scale(${scale}) rotate(${rotationAngle}deg)` }} />}
+            {svgImage && <img src={svgImage} alt="Uploaded SVG" style={{ transform: `scale(${scale}) rotate(${rotationAngle}deg)`, cursor: "grab" }} />}
           </div>
         </div>
       </div>

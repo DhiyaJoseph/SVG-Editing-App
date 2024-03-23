@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUndo } from "react-icons/fa";
 import { FaRedoAlt } from "react-icons/fa";
-
 import { ImCheckmark } from "react-icons/im";
 import { FaDownload } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
 
+const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
+  const [showUndoTooltip, setShowUndoTooltip] = useState(false);
+  const [showRedoTooltip, setShowRedoTooltip] = useState(false);
+  const [showSaveTooltip, setShowSaveTooltip] = useState(false);
+  const [showDownloadTooltip, setShowDownloadTooltip] = useState(false);
+  const [showToggleTooltip, setShowToggleTooltip] = useState(false);
 
-
-const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage ,onToggleInput}) => {
   const handleDownloadImage = () => {
     // Check if an image is available for download
     if (svgImage) {
@@ -30,21 +33,60 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage ,onToggleInput}) => {
   };
 
   return (
-    <div style={{ border: "1px solid #111", margin: "0", padding: "" }}>
+    <div style={{ border: "1px solid #111", margin: "0", padding: "" ,background: "linear-gradient(to right, #ff5733, #ff8d33)"
+  }}>
       <div className='nav-wrapper'>
         <h1 className=''>SVG EDITOR</h1>
         <div style={{ display: "flex", gap: "20px" }}>
-          <div className='round-wrap' onClick={onUndo}><FaUndo /></div>
-          <div className='round-wrap' onClick={onRedo}><FaRedoAlt /></div>
-
-          <div className='round-wrap' onClick={onSaveImage}><ImCheckmark /></div>
-          <div className='round-wrap' onClick={handleDownloadImage}><FaDownload /></div>
-          <div className='round-wrap' onClick={onToggleInput}><ImCross /></div>
-
+          <div
+            className='round-wrap'
+            onClick={onUndo}
+            onMouseEnter={() => setShowUndoTooltip(true)}
+            onMouseLeave={() => setShowUndoTooltip(false)}
+          >
+            <FaUndo />
+            {showUndoTooltip && <span>Undo</span>}
+          </div>
+          <div
+            className='round-wrap'
+            onClick={onRedo}
+            onMouseEnter={() => setShowRedoTooltip(true)}
+            onMouseLeave={() => setShowRedoTooltip(false)}
+          >
+            <FaRedoAlt />
+            {showRedoTooltip && <span>Redo</span>}
+          </div>
+          <div
+            className='round-wrap'
+            onClick={onSaveImage}
+            onMouseEnter={() => setShowSaveTooltip(true)}
+            onMouseLeave={() => setShowSaveTooltip(false)}
+          >
+            <ImCheckmark />
+            {showSaveTooltip && <span>Save</span>}
+          </div>
+          <div
+            className='round-wrap'
+            onClick={handleDownloadImage}
+            onMouseEnter={() => setShowDownloadTooltip(true)}
+            onMouseLeave={() => setShowDownloadTooltip(false)}
+          >
+            <FaDownload />
+            {showDownloadTooltip && <span>Download</span>}
+          </div>
+          <div
+            className='round-wrap'
+            onClick={onToggleInput}
+            onMouseEnter={() => setShowToggleTooltip(true)}
+            onMouseLeave={() => setShowToggleTooltip(false)}
+          >
+            <ImCross />
+            {showToggleTooltip && <span> Close</span>}
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;
