@@ -53,7 +53,7 @@ In addition to the core functionalities, the following features have been implem
 
 ## Screenshots
 
-Insert screenshots of your web application here to showcase its user interface and features.
+![Design of the SVG EDITOR](https://github.com/DhiyaJoseph/SVG-Editing-App/assets/149352526/014c69f1-25fa-4990-8357-e71a41741096)
 
 ## Contributing
 
