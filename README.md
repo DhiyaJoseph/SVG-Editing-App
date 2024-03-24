@@ -51,15 +51,9 @@ In addition to the core functionalities, the following features have been implem
 - **Numerical Input Fields:** Input fields are provided to specify scaling, rotation, and translation values numerically.
 - **Real-time SVG Rendering Updates:** SVG rendering updates in real-time during manipulation, providing immediate visual feedback.
 
-## Screenshots
+## SVG EDITOR Design Image
 
 ![Design of the SVG EDITOR](https://github.com/DhiyaJoseph/SVG-Editing-App/assets/149352526/014c69f1-25fa-4990-8357-e71a41741096)
 
-## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request with any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
 
