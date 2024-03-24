@@ -1,75 +1,65 @@
-# Getting Started with SVG EDITOR WEB APP
+# SVG Editing Web App
 
-This web application allows users to import SVG images and perform various manipulations such as scaling, rotating, and translating them within the interface. The goal is to provide a user-friendly experience with intuitive controls and real-time feedback during manipulation.
+This web application allows users to import SVG images and manipulate them by scaling, rotating, and translating within the interface. It's designed to provide a user-friendly experience with seamless interaction and real-time feedback during image manipulation.
 
-Design Choices and UI/UX Goals:
-•Clarity and Simplicity: The interface is designed to be clean and intuitive, with clearly labeled icons/buttons for each action (import, scale, rotate, translate).
-•Real-time Feedback: Visual cues such as tooltips are provided during hover over icons to indicate their functionality. Additionally, manipulation handles are highlighted during interaction.
-•Responsiveness: The UI is designed to adapt seamlessly to different screen sizes, ensuring a consistent experience across devices.[https://github.com/DhiyaJoseph/SVG-Editing-App.git]
+## Table of Contents
 
-## Available Scripts
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Additional Features](#additional-features)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **SVG Import:** Users can import SVG images either by providing their own SVG files or using the provided test data.
+- **Manipulation:** The app allows users to scale, rotate, and translate imported SVG images seamlessly within the interface.
+- **Real-time Feedback:** Users receive visual cues and feedback indicators during image manipulation, enhancing the user experience.
+- **Responsive Design:** The user interface adapts appropriately for different screen sizes, ensuring accessibility across devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React:** Front-end framework used for building the single-page web application.
+- **React Router:** Used for routing within the application.
+- **SVG Manipulation Libraries:** Utilized libraries for handling SVG manipulation.
+- **CSS:** Used for styling the user interface.
+- **JavaScript (ES6+):** Programming language for implementing interactive functionalities.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using `npm install`.
+4. Run the development server using `npm start`.
+5. Access the web application in your browser at [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Upon accessing the web application, users are presented with options to import an SVG image.
+2. Once an SVG image is imported, users can manipulate it using the provided functionalities (scale, rotate, translate).
+3. Real-time feedback is provided during manipulation, enhancing the user experience.
+4. Users can save or download the manipulated SVG image as needed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Additional Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In addition to the core functionalities, the following features have been implemented:
 
-### `npm run eject`
+- **Undo/Redo Actions:** Users can undo or redo their manipulation actions.
+- **Numerical Input Fields:** Input fields are provided to specify scaling, rotation, and translation values numerically.
+- **Real-time SVG Rendering Updates:** SVG rendering updates in real-time during manipulation, providing immediate visual feedback.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Insert screenshots of your web application here to showcase its user interface and features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contributions are welcome! Feel free to open an issue or submit a pull request with any enhancements or bug fixes.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is licensed under the MIT License.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
