@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Getting Started with SVG EDITOR WEB APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application allows users to import SVG images and perform various manipulations such as scaling, rotating, and translating them within the interface. The goal is to provide a user-friendly experience with intuitive controls and real-time feedback during manipulation.
+
+Design Choices and UI/UX Goals:
+Clarity and Simplicity: The interface is designed to be clean and intuitive, with clearly labeled icons/buttons for each action (import, scale, rotate, translate).
+Real-time Feedback: Visual cues such as tooltips are provided during hover over icons to indicate their functionality. Additionally, manipulation handles are highlighted during interaction.
+Responsiveness: The UI is designed to adapt seamlessly to different screen sizes, ensuring a consistent experience across devices.[]
 
 ## Available Scripts
 
