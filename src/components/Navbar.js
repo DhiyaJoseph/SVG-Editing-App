@@ -45,7 +45,7 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
             onMouseLeave={() => setShowUndoTooltip(false)}
           >
             <FaUndo />
-            {showUndoTooltip && <span>Undo</span>}
+            <span className={showUndoTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Undo</span>
           </div>
           <div
             className='round-wrap'
@@ -54,7 +54,7 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
             onMouseLeave={() => setShowRedoTooltip(false)}
           >
             <FaRedoAlt />
-            {showRedoTooltip && <span>Redo</span>}
+            <span className={showRedoTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Redo</span>
           </div>
           <div
             className='round-wrap'
@@ -63,7 +63,7 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
             onMouseLeave={() => setShowSaveTooltip(false)}
           >
             <ImCheckmark />
-            {showSaveTooltip && <span>Save</span>}
+            <span className={showSaveTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Save</span>
           </div>
           <div
             className='round-wrap'
@@ -72,7 +72,7 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
             onMouseLeave={() => setShowDownloadTooltip(false)}
           >
             <FaDownload />
-            {showDownloadTooltip && <span>Download</span>}
+            <span className={showDownloadTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Download</span>
           </div>
           <div
             className='round-wrap'
@@ -81,7 +81,7 @@ const Navbar = ({ onUndo, onRedo, onSaveImage, svgImage, onToggleInput }) => {
             onMouseLeave={() => setShowToggleTooltip(false)}
           >
             <ImCross />
-            {showToggleTooltip && <span> Close</span>}
+            <span className={showToggleTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Close</span>
           </div>
         </div>
       </div>

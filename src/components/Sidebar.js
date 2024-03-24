@@ -18,7 +18,7 @@ const Sidebar = ({ onRotate, onScale}) => {
           onMouseLeave={() => setShowRotateTooltip(false)}
         >
           <MdOutlineRotate90DegreesCw />
-          {showRotateTooltip && <span>Rotate</span>}
+          <span className={showRotateTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Rotate</span>
         </div>
         <div
           className='round-wrap'
@@ -27,7 +27,7 @@ const Sidebar = ({ onRotate, onScale}) => {
           onMouseLeave={() => setShowScaleTooltip(false)}
         >
           <IoMdResize />
-          {showScaleTooltip && <span>Scale</span>}
+          <span className={showScaleTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Scale</span>
         </div>
         <div
           className='round-wrap'
@@ -35,7 +35,7 @@ const Sidebar = ({ onRotate, onScale}) => {
           onMouseLeave={() => setShowTranslateTooltip(false)}
         >
           <FaLocationArrow />
-          {showTranslateTooltip && <span>Translate</span>}
+          <span className={showTranslateTooltip ? 'tooltip tooltip-show' : 'tooltip'}>Translate</span>
         </div>
       </div>
     </div>
