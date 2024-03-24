@@ -1,6 +1,6 @@
 # SVG Editing Web App
 
-This web application allows users to import SVG images and manipulate them by scaling, rotating, and translating within the interface. It's designed to provide a user-friendly experience with seamless interaction and real-time feedback during image manipulation.
+This web application allows users to import SVG images and manipulate them by scaling, rotating, and translating and also can undo/redo and save/download ,it also has a close option to select another image for editing within the interface. It's designed to provide a user-friendly experience with seamless interaction and real-time feedback during image manipulation.
 
 ## Table of Contents
 
