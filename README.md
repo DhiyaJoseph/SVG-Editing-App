@@ -14,8 +14,6 @@ This web application allows users to import SVG images and manipulate them by sc
 - [Usage](#usage)
 - [Additional Features](#additional-features)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
