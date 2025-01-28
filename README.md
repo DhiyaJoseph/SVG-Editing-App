@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 # Getting Started with SVG Editing App
-=======
+=====
 # SVG Editing Web App
->>>>>>> e2b233bb75eec659d50a76f95dfa41348a7b9764
+
 
 This web application allows users to import SVG images and manipulate them by scaling, rotating, and translating and also can undo/redo and save/download ,it also has a close option to select another image for editing within the interface. It's designed to provide a user-friendly experience with seamless interaction and real-time feedback during image manipulation.
 
