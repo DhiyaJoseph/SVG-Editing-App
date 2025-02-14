@@ -1,4 +1,3 @@
-
 # Getting Started with SVG Editing App
 # SVG Editing Web App
 
